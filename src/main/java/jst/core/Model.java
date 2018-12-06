@@ -578,8 +578,9 @@ public class Model {
                 int topic = topicRandomGenerator.nextInt(T);
                 zAssign[d][n] = topic;
                 int sentiment = -1;
-				if(Lexicon.lexicon.containsKey(word)){
-				    double[] dist = Lexicon.lexicon.get(word);
+		String tword = corpus.localDict.getWord(word);
+				if(Lexicon.lexicon.containsKey(tword)){
+				    double[] dist = Lexicon.lexicon.get(tword);
                     List<Integer> res = Utils.argmax(dist);
 
                     if(res.size() == 1){
